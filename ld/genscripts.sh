@@ -93,9 +93,21 @@ ENABLE_INITFINI_ARRAY=$2
 EMULATION_NAME=$3
 TOOL_LIB=$4
 
+source_sh()
+{
+  if test -n "${DEPDIR}"; then
+    echo $1 >> ${DEPDIR}/e${EMULATION_NAME}.Tc
+  fi
+  . $1
+}
+
+if test -n "${DEPDIR}"; then
+  rm -f ${DEPDIR}/e${EMULATION_NAME}.Tc
+fi
+
 # Include the emulation-specific parameters:
 CUSTOMIZER_SCRIPT="${srcdir}/emulparams/${EMULATION_NAME}.sh"
-. ${CUSTOMIZER_SCRIPT}
+source_sh ${CUSTOMIZER_SCRIPT}
 
 if test -d ldscripts; then
   true
