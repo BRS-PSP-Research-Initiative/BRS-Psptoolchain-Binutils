@@ -308,7 +308,7 @@ AUTOMAKE_OPTIONS = 1.11 foreign no-dist
 ACLOCAL_AMFLAGS = -I .. -I ../config -I ../bfd
 
 # Build '.' first so all generated files exist.
-SUBDIRS = . po
+SUBDIRS = .
 INCDIR = $(srcdir)/../include
 BFDDIR = $(srcdir)/../bfd
 AM_CFLAGS = $(WARN_CFLAGS)
