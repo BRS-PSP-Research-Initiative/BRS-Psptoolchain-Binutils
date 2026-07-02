@@ -578,6 +578,7 @@ ALL_EMULATION_SOURCES = \
 	eelf_i386_nacl.c \
 	eelf_i386_sol2.c \
 	eelf_i386_vxworks.c \
+	eelf_mipsallegrexel_psp.c \
 	eelf_s390.c \
 	egld960.c \
 	egld960coff.c \
@@ -1267,6 +1268,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf_l1om.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf_l1om_fbsd.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf_s390.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf_mipsallegrexel_psp.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf_x86_64.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf_x86_64_fbsd.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf_x86_64_nacl.Po@am__quote@
@@ -2782,6 +2784,9 @@ eelf_i386_vxworks.c: $(srcdir)/emulparams/elf_i386_vxworks.sh \
 eelf_s390.c: $(srcdir)/emulparams/elf_s390.sh \
   $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
 	${GENSCRIPTS} elf_s390 "$(tdir_elf_s390)"
+eelf_mipsallegrexel_psp.c: $(srcdir)/emulparams/elf_mipsallegrexel_psp.sh \
+  $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+	${GENSCRIPTS} elf_mipsallegrexel_psp "$(tdir_elf_mipsallegrexel_psp)"
 egld960.c: $(srcdir)/emulparams/gld960.sh \
   $(srcdir)/emultempl/gld960.em $(srcdir)/scripttempl/i960.sc ${GEN_DEPENDS}
 	${GENSCRIPTS} gld960 "$(tdir_gld960)"
